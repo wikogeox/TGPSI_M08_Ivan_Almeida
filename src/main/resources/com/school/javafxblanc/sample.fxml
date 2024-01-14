@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.javafxblanc.SampleController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" text="Ficheiro">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuExitApplication" text="Fechar">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Médicos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuInserirMedico" text="Inserir médico" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuListarMedicos" text="Listar médicos" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuPesquisarMedico" text="Pesquisar médico" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Consultas">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuMarcarConsultas" text="Marcar consultas" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuListarConsultas" text="Listar consultas" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuEliminarConsultas" text="Eliminar consultas" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuPesquisarConsultas" text="Pesquisar consultas" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuAcercaDe" text="Acerca de" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="230.0" layoutY="14.0" text="Projeto final">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

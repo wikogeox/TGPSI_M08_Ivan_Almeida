@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#keyPesquisa" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.javafxblanc.ListarMedicoController">
+   <children>
+      <Label layoutX="316.0" layoutY="23.0" text="Lista de médicos">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="347.0" layoutY="360.0" mnemonicParsing="false" onAction="#buttonCarregarLista" text="Ver médicos" />
+      <TableView fx:id="tableView" layoutX="82.0" layoutY="71.0" prefHeight="268.0" prefWidth="638.0">
+        <columns>
+          <TableColumn fx:id="tableColumnID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="169.0" text="Nome" />
+            <TableColumn fx:id="tableColumnIdade" prefWidth="88.0" text="Idade" />
+            <TableColumn fx:id="tableColumnGenero" prefWidth="129.0" text="Genero" />
+            <TableColumn fx:id="tableColumnEspecialidade" prefWidth="176.0" text="Especialidade" />
+        </columns>
+      </TableView>
+      <Label layoutX="36.0" layoutY="360.0" text="Nome">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNome" layoutX="107.0" layoutY="360.0" />
+      <Label layoutX="36.0" layoutY="405.0" prefHeight="27.0" prefWidth="52.0" text="Idade">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtIdade" layoutX="107.0" layoutY="406.0" />
+      <Label layoutX="36.0" layoutY="451.0" text="Genero">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtGenero" layoutX="107.0" layoutY="452.0" />
+      <Label layoutX="31.0" layoutY="504.0" text="Especialidade">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEspecialidade" layoutX="154.0" layoutY="505.0" />
+      <Button layoutX="98.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnAddMedico" text="Adicionar" />
+      <Button layoutX="550.0" layoutY="361.0" mnemonicParsing="false" onAction="#ButtonRemove" text="Remover" />
+      <Label layoutX="516.0" layoutY="465.0" text="Pesquisar por especialidade">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPesquisar" layoutX="558.0" layoutY="518.0" />
+      <Button layoutX="600.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnPesquisarMedico" text="Pesquisar" />
+   </children>
+</AnchorPane>
