@@ -1,17 +1,19 @@
 package com.school.javafxblanc;
 
+import javafx.scene.control.RadioButton;
+
 public class Pessoa {
     //Atributos
     private String nome;
     private int idade;
-    private String genero;
+    private boolean genero;
 
     //Metodos construtores
     public Pessoa() {
 
     }
 
-    public Pessoa(String nome, int idade, String genero) {
+    public Pessoa(String nome, int idade, boolean genero) {
         this.nome = nome;
         this.idade = idade;
         this.genero = genero;
@@ -34,11 +36,11 @@ public class Pessoa {
         this.idade = idade;
     }
 
-    public String getGenero() {
+    public boolean getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(boolean genero) {
         this.genero = genero;
     }
 }

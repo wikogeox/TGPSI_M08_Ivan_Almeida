@@ -1,9 +1,11 @@
 package com.school.javafxblanc;
 
+import java.time.LocalDate;
+
 public class Consulta {
     //Atributos
     private String tipoDeConsulta;
-    private String data;
+    private LocalDate data;
     private Paciente paciente;
     private Medico medico;
     private int IDM;
@@ -14,7 +16,7 @@ public class Consulta {
     }
 
     //Agregação - Metodo construtor
-    public Consulta(int IDM, String tipoDeConsulta, String data,Paciente paciente, Medico medico) {
+    public Consulta(int IDM, String tipoDeConsulta, LocalDate data,Paciente paciente, Medico medico) {
         this.tipoDeConsulta = tipoDeConsulta;
         this.data = data;
         this.paciente = paciente;
@@ -31,11 +33,11 @@ public class Consulta {
         this.tipoDeConsulta = tipoDeConsulta;
     }
 
-    public String getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fa904d;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.javafxblanc.AcercaDeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4cacf5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.javafxblanc.AcercaDeController">
    <children>
       <Label layoutX="14.0" layoutY="247.0" text="Escola Secundária Ferreira Dias">
          <font>
@@ -30,7 +30,7 @@
       </Label>
       <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="414.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../Downloads/logo_aquaalba-removebg-preview.png" />
+            <Image url="@image/logo_aquaalba-removebg-preview.png" />
          </image>
       </ImageView>
    </children>

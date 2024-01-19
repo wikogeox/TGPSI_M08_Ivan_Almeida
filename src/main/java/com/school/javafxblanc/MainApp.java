@@ -14,9 +14,10 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception{
         //1º passo - O método Start associa este Layout a um objeto à class Parent
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        //2º passo . Definição do titulo para a Stage
+        //2º passo . Definições da Stage
         primaryStage.setTitle("Trabalho final do módulo 8");
-        //3º passo - Associação do Leyout do Parent à Scene e esta à Stage
+        primaryStage.setResizable(false);
+        //3º passo - Associação do Layout do Parent à Scene e esta à Stage
         primaryStage.setScene(new Scene(root));
         //Não deixa passar da segunda janela para a principal
         Settings.setPrimaryStage(primaryStage);

@@ -12,7 +12,7 @@ public class Medico extends Pessoa {
         super();
     }
 
-    public Medico(int ID, String nome, int idade, String genero, String especialidade) {
+    public Medico(int ID, String nome, int idade, boolean genero, String especialidade) {
         super(nome, idade, genero);
         this.especialidade = especialidade;
         this.ID = ID;

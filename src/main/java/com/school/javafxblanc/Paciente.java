@@ -10,7 +10,7 @@ public class Paciente extends Pessoa {
         super();
     }
 
-    public Paciente(int ID, String nome, int idade, String genero, int numDeUtente) {
+    public Paciente(int ID, String nome, int idade, boolean genero, int numDeUtente) {
         super(nome, idade, genero);
         this.numDeUtente = numDeUtente;
         this.ID = ID;

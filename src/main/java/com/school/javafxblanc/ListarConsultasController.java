@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -24,17 +25,17 @@ public class ListarConsultasController implements Initializable {
     @FXML
     private DatePicker datePickerData;
     @FXML
-    private TableView<Consulta> tableView;
+    private TableView<Consulta> tableViewConsultas;
     @FXML
     private TableColumn<Consulta,Integer> tableColumnID;
     @FXML
     private TableColumn<Consulta,String> tableColumnTipo;
     @FXML
-    private TableColumn<Consulta,String> tableColumnIData;
+    private TableColumn<Consulta, LocalDate> tableColumnIData;
     @FXML
-    private TableColumn<Consulta, Paciente> tableColumnPaciente;
+    private TableColumn<Consulta, String> tableColumnPaciente;
     @FXML
-    private TableColumn<Consulta,Medico> tableColumnMedico;
+    private TableColumn<Consulta,String> tableColumnMedico;
 
     @FXML
     private static ObservableList<Consulta> Pesquisa = FXCollections.observableArrayList();
@@ -46,11 +47,11 @@ public class ListarConsultasController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableColumnID.setCellValueFactory(new PropertyValueFactory<Consulta, Integer>("IDM"));
         tableColumnTipo.setCellValueFactory(new PropertyValueFactory<Consulta, String>("tipoDeConsulta"));
-        tableColumnIData.setCellValueFactory(new PropertyValueFactory<Consulta, String>("data"));
-        tableColumnPaciente.setCellValueFactory(new PropertyValueFactory<Consulta, Paciente>("paciente"));
-        tableColumnMedico.setCellValueFactory(new PropertyValueFactory<Consulta, Medico>("medico"));
+        tableColumnIData.setCellValueFactory(new PropertyValueFactory<Consulta, LocalDate>("data"));
+        tableColumnPaciente.setCellValueFactory(new PropertyValueFactory<Consulta, String>("paciente"));
+        tableColumnMedico.setCellValueFactory(new PropertyValueFactory<Consulta, String>("medico"));
 
-        tableView.setItems(Settings.getListaConsultas());
+        tableViewConsultas.setItems(Settings.getListaConsultas());
     }
 
     public void buttonCarregarLista(ActionEvent actionEvent) {
@@ -60,13 +61,13 @@ public class ListarConsultasController implements Initializable {
     }
 
     public void btnAddConsulta(ActionEvent actionEvent) {
-        lastID += 1;
-        Settings.getListaConsultas().add(new Consulta(lastID, txtTipo.getText(), datePickerData.getValue(), txtNomeP.getText(), txtNomeM.getText()));
+//        lastID += 1;
+//        Settings.getListaConsultas().add(new Consulta(lastID, txtTipo.getText(), datePickerData.getValue(), txtNomeP.getText(), txtNomeM.getText()));
     }
 
     public void ButtonRemove(ActionEvent actionEvent) {
-        int selectedID = tableView.getSelectionModel().getSelectedIndex();
-        tableView.getItems().remove(selectedID);
+        int selectedID = tableViewConsultas.getSelectionModel().getSelectedIndex();
+        tableViewConsultas.getItems().remove(selectedID);
     }
 
     public void btnPesquisarConsulta(ActionEvent actionEvent) {
@@ -86,7 +87,7 @@ public class ListarConsultasController implements Initializable {
                     Pesquisa.add(c);
             }
             Settings.getListaConsultas().clear();
-            tableView.setItems(Pesquisa);
+            tableViewConsultas.setItems(Pesquisa);
         }
     }
 }
