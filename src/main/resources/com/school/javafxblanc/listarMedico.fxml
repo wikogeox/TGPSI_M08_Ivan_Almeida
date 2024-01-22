@@ -18,18 +18,13 @@
    <left>
       <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #78a8f5;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="26.0" layoutY="187.0" mnemonicParsing="false" onAction="#buttonMedicos" prefHeight="42.0" prefWidth="149.0" text="Médicos" />
-            <Button layoutX="26.0" layoutY="258.0" mnemonicParsing="false" onAction="#buttonPacientes" prefHeight="42.0" prefWidth="149.0" text="Pacientes" />
-            <Button layoutX="26.0" layoutY="329.0" mnemonicParsing="false" onAction="#buttonConsultas" prefHeight="42.0" prefWidth="149.0" text="Consultas" />
-            <Button layoutX="26.0" layoutY="404.0" mnemonicParsing="false" onAction="#buttonAcercaDe" prefHeight="42.0" prefWidth="149.0" text="Acerca de" />
-            <Label layoutX="15.0" layoutY="14.0" text="Lista de médicos">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Label>
-            <Button layoutX="25.0" layoutY="484.0" mnemonicParsing="false" onAction="#buttonClose" prefHeight="95.0" prefWidth="150.0" text="Sair" />
+            <Button layoutX="26.0" layoutY="166.0" mnemonicParsing="false" onAction="#buttonMedicos" prefHeight="42.0" prefWidth="149.0" text="Médicos" />
+            <Button layoutX="26.0" layoutY="239.0" mnemonicParsing="false" onAction="#buttonPacientes" prefHeight="42.0" prefWidth="149.0" text="Pacientes" />
+            <Button layoutX="26.0" layoutY="314.0" mnemonicParsing="false" onAction="#buttonConsultas" prefHeight="42.0" prefWidth="149.0" text="Consultas" />
+            <Button layoutX="26.0" layoutY="389.0" mnemonicParsing="false" onAction="#buttonAcercaDe" prefHeight="42.0" prefWidth="149.0" text="Acerca de" />
+            <Button layoutX="26.0" layoutY="471.0" mnemonicParsing="false" onAction="#buttonClose" prefHeight="95.0" prefWidth="150.0" text="Sair" />
             <Pane layoutX="196.0" layoutY="1.0" prefHeight="600.0" prefWidth="5.0" style="-fx-background-color: #000000;" />
-            <ImageView fitHeight="132.0" fitWidth="172.0" layoutX="14.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="132.0" fitWidth="172.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/png-transparent-red-cross-logo-medicine-symbol-medical-sign-red-cross-text-sign-hospital-removebg-preview.png" />
                </image>
@@ -40,7 +35,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableView" editable="true" layoutX="16.0" layoutY="30.0" prefHeight="252.0" prefWidth="769.0">
+            <TableView fx:id="tableView" layoutX="18.0" layoutY="48.0" onMouseClicked="#editMedico" prefHeight="252.0" prefWidth="769.0">
                <columns>
                   <TableColumn fx:id="tableColumnID" prefWidth="75.0" text="ID" />
                   <TableColumn fx:id="tableColumnNome" prefWidth="229.0" text="Nome" />
@@ -75,7 +70,7 @@
                <ToggleGroup fx:id="groupGender" />
             </fx:define>
             <TextField fx:id="txtEspecialidade" layoutX="194.0" layoutY="506.0" />
-            <Button layoutX="154.0" layoutY="549.0" mnemonicParsing="false" onAction="#btnAddMedico" text="Adicionar" />
+            <Button layoutX="109.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnAddMedico" text="Adicionar" />
             <RadioButton fx:id="rbMale" layoutX="163.0" layoutY="465.0" mnemonicParsing="false" text="Masculino" toggleGroup="$groupGender">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -86,15 +81,26 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPesquisar" layoutX="534.0" layoutY="452.0" />
+            <TextField fx:id="txtPesquisar" layoutX="534.0" layoutY="452.0" onKeyReleased="#keyPesquisa" />
             <Button layoutX="575.0" layoutY="506.0" mnemonicParsing="false" onAction="#btnPesquisarMedico" text="Pesquisar" />
             <RadioButton fx:id="rbFemale" layoutX="290.0" layoutY="465.0" mnemonicParsing="false" text="Feminino" toggleGroup="$groupGender">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </RadioButton>
-            <Button layoutX="369.0" layoutY="300.0" mnemonicParsing="false" onAction="#ButtonRemove" text="Remover" />
-            <Pane layoutX="-1.0" layoutY="355.0" prefHeight="3.0" prefWidth="801.0" style="-fx-background-color: #000000;" />
+            <Button layoutX="371.0" layoutY="321.0" mnemonicParsing="false" onAction="#ButtonRemove" text="Remover" />
+            <Button layoutX="237.0" layoutY="548.0" mnemonicParsing="false" onAction="#buttonEditar" prefHeight="25.0" prefWidth="64.0" text="Editar" />
+            <Label layoutX="349.0" layoutY="6.0" text="Lista de médicos">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="338.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtID" disable="true" editable="false" layoutX="142.0" layoutY="339.0" />
          </children>
       </AnchorPane>
    </center>

@@ -21,6 +21,10 @@ public class MainApp extends Application {
         primaryStage.setScene(new Scene(root));
         //Não deixa passar da segunda janela para a principal
         Settings.setPrimaryStage(primaryStage);
+        //Lista todas as listas
+        Settings.loadListaMedicos();
+        Settings.loadListaPacientes();
+        Settings.loadListaConsultas();
         //4º passo - Mostrar a Stage no Sistema Operativo
         primaryStage.show();
     }

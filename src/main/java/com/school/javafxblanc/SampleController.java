@@ -1,5 +1,5 @@
 package com.school.javafxblanc;
-
+//Importações
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,11 +19,13 @@ public class SampleController {
     @FXML
     private BorderPane borderPane;
 
+    //Botão Começar - Quando clicado abre uma nova janela com o programa principal
     public void buttonComecar(ActionEvent actionEvent) throws Exception {
         Parent scene = FXMLLoader.load(getClass().getResource("listarMedico.fxml"));
 
         //Nova janela (Stage)
         Stage about = new Stage();
+
         //Definições da Stage
         about.setTitle("Hospital");
 
@@ -38,15 +40,22 @@ public class SampleController {
         about.show();
     }
 
+    //Botão fechar - Quando clicado fecha o trabalho
     public void buttonClose(ActionEvent actionEvent) {
+        //Criação de uma alert box
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        //Definição do titulo da alert box
         alert.setTitle("Sair da aplicação");
+        //Definição da texto que aparece na alert box
         alert.setHeaderText("Deseja mesmo sair da aplicação?");
+        //Criação de dois botões "Sim" e "Não"
         ButtonType botaoSim = new ButtonType("Sim");
         ButtonType botaoNao = new ButtonType("Não");
+        //Adiciona os dois botões
         alert.getButtonTypes().setAll(botaoSim, botaoNao);
 
         Optional<ButtonType> choose = alert.showAndWait();
+        //Se o botão "Sim" for clicado fecha a aplicação
         if(choose.get() == botaoSim)
             Platform.exit();
     }
